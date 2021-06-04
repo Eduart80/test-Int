@@ -12,6 +12,9 @@ public class HomePage extends BasePage {
     By seeBob = By.xpath("//a{sample element text}") ;
     By bobPublishing = By.xpath("//a[publishing timeline]");
     By gameRes =By.xpath("//a[game result]");
+    By assertText = By.xpath("//a[plain text in web]");
+    By clickFollow = By.xpath("//a[foolow me]");
+    By clickLinkBob= By.id("bob link");
 
 
     public void clickme() {
@@ -43,8 +46,16 @@ public class HomePage extends BasePage {
         assertLists(gameRes, one);
         assertLists(gameRes, two);
     }
-
-
+    public void checkText(String name){
+        String plainText = Web.getDriver().findElement(assertText).getText();
+        Assert.assertEquals(plainText, name, "Text is not correct");
+    }
+    public void followMe(){
+        clickIt(clickFollow);
+    }
+    public void wallPage(){
+        clickIt(clickLinkBob);
+    }
 
 
 

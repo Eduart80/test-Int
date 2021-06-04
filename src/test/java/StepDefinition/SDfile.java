@@ -1,6 +1,8 @@
 package StepDefinition;
 
 import Pages.Kata.HomePage;
+import cucumber.api.java.After;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 
 public class SDfile {
@@ -35,6 +37,20 @@ public class SDfile {
     public void look(String text1, String text2){
         pp.lookUp(text1, text2);
     }
-
-
+    @When("^Charlie has published \"(.+)\"$")
+    public  void  checkIt(String text){
+        pp.checkText(text);
+    }
+    @And("^Charlie follows Alice$")
+    public void foll(){
+        pp.followMe();
+    }
+    @And("^Charlie follows Bob$")
+    public void foll2(){
+        pp.followMe();
+    }
+    @And("^Charlie views his wall$")
+    public void wall(){
+        pp.wallPage();
+    }
 }
