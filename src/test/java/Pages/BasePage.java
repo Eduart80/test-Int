@@ -131,6 +131,10 @@ public class BasePage {
         JavascriptExecutor js = (JavascriptExecutor)Web.getDriver();
         js.executeScript("scrollBy(0,700);");
     }
+    public void scrollPageUP(){
+        JavascriptExecutor js = (JavascriptExecutor)Web.getDriver();
+        js.executeScript("scrollBy(0,-700);");
+    }
     public void scrollByWebElement(By locator){
         JavascriptExecutor js = (JavascriptExecutor)Web.getDriver();
         WebElement elem = Web.getDriver().findElement(locator);
@@ -264,7 +268,7 @@ public class BasePage {
         //System.out.println("Total books in basket: "+a);
         return a;
     }
-    public Set<String> assertLists(By anotherName){
+    public Set<String> assertLists(By anotherName, String is_displayed){
         Set<String>ar=new HashSet<>();
         List<WebElement> doli = Web.getDriver().findElements(anotherName);
         int counting = 0;
