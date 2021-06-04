@@ -1,55 +1,30 @@
 package StepDefinition;
 
-import Pages.Hotels.DealsLandingPage;
-import Pages.Hotels.LandingPage;
-import Pages.Hotels.allInclusive;
+import Pages.Kata.HomePage;
 import cucumber.api.java.en.When;
 
 public class SDfile {
-    LandingPage pp = new LandingPage();
-    DealsLandingPage lp = new DealsLandingPage();
-    allInclusive op = new allInclusive();
+    HomePage pp = new HomePage();
 
-    @When("^the address i click 'Deals' linkText$")
+    @When("^Alice has published \"(.+)\"$")
     public void clickDeals(){
-        pp.clickDeals();
+        pp.clicme();
     }
-    @When("^search for '(.+)' location$")
-    public void locat(String name){
-        lp.findLocation(name);
+    @When("^Alice views her timeline$")
+    public void locat(){
+       pp.views();
     }
-    @When("^get city '(.+)' from list$")
+    @When("^Alice sees:\"(.+)\"$")
     public void getList(String name){
-        lp.checkListActive(name);
+        pp.checkList(name);
     }
-    @When("^in calendar select Date '(.+)' to checkIn$")
-    public void dateIN(String number){
-        lp.autoSelectDate(number);
+    @When("^Bob has published  \"(.+)\"$")
+    public void commentIN(String text){
+
     }
-    @When("^select Date '(.+)' to checkOut$")
-    public void dateOUT(String number){
-        lp.autoSelectDate2(number);
-    }
-    @When("^select quality '(.+)' hotel$")
-    public void selQual(String name){
-        lp.selectQuality(name);
-    }
-    @When("^click Continue button$")
-    public void Continue(){
-        lp.contButton();
-    }
-    @When("^i click on all inclusive text link$")
-    public void AllPackage(){
-        pp.url();
-        op.goToLink();
-    }
-    @When("^select travel from '(.+)'$")
-    public void fromPackage(String name){
-        op.fromLocation(name);
-    }
-    @When("^and select destination '(.+)'$")
-    public void toPackage(String name){
-        op.toLocation(name);
+    @When("^Bob has published \"(.+)\"$")
+    public void commentIN2(String text){
+
     }
 
 

@@ -3,13 +3,12 @@ Feature: Publishing
   Scenario: Alice publishes messages to her personal timeline.
     Given Alice has published "I love the weather today."
     When Alice views her timeline
-    Then Alice sees:
-    * "I love the weather today."
+    Then Alice sees:"I love the weather today."
 
 Feature: Timeline
   Scenario: Alice views Bob's timeline.
     Given Bob has published "Darn! We lost!"
-    And Bob has published "Good game though."
+    And Bob has published  "Good game though."
     When Alice views Bob's timeline
     Then Alice sees:
     * Good game though. (1 minute ago)
