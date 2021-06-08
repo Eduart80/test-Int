@@ -1,5 +1,6 @@
 package DriverWrapper;
 
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,15 +13,15 @@ public class Web {
 
     private static WebDriver driver;
 
-    //@Before
+    @Before
     public void initDriver() {
         System.setProperty("webdriver.chrome.driver", "./chrome/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("chrome/index.html");
+        driver.get("C:\\Users\\zeedy\\Documents\\git\\test-Int\\chrome\\index.html");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    //@After
+    @After
     public void quitDriver() {
         driver.quit();
     }

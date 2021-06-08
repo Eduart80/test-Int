@@ -55,19 +55,19 @@ public class SDfile {
         pp.wallPage();
     }
     @When("^Charlie sees: (.+)$")
-    public void last(String text){
+    public void CharlieLast(String text){
         pp.seeBlog(text);
     }
     @When("^Bob (.+)$")
-    public void last2(String text){
+    public void BobLast2(String text){
         pp.seeBlog2(text);
     }
-    @When("^Bob (.+)$")
-    public void last3(String text){
+    @When("^Bob - (.+)$")
+    public void BobLast3(String text){
         pp.seeBlog3(text);
     }
     @When("^Alice (.+)$")
-    public void last4(String text){
+    public void AliceLast4(String text){
         pp.seeBlog4(text);
     }
 
