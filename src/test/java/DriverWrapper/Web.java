@@ -12,11 +12,11 @@ public class Web {
 
     private static WebDriver driver;
 
-    @Before
+    //@Before
     public void initDriver() {
         System.setProperty("webdriver.chrome.driver", "./chrome/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("https://www.google.com/");
+        driver.get("chrome/index.html");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 

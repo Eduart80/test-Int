@@ -15,6 +15,10 @@ public class HomePage extends BasePage {
     By assertText = By.xpath("//a[plain text in web]");
     By clickFollow = By.xpath("//a[foolow me]");
     By clickLinkBob= By.id("bob link");
+    By charliePage = By.xpath("//a[charlies main page]");
+    By bobBlog = By.xpath("//a[Bob blog]");
+    By bobBlog2 = By.xpath("//a[next blog]");
+    By aliceBlog = By.xpath("//a[alice blog]");
 
 
     public void clickme() {
@@ -31,7 +35,7 @@ public class HomePage extends BasePage {
     public void checkList(String name) {
         scrollPage();
         boolean ff = Web.getDriver().findElement(bobPublishing).isDisplayed();
-        Assert.assertEquals(ff, "is present");
+        Assert.assertEquals(ff, "is not present");
     }
     public void commentF(String name) {
         scrollPage();
@@ -57,7 +61,22 @@ public class HomePage extends BasePage {
         clickIt(clickLinkBob);
     }
 
-
+    public void seeBlog(String text){
+        String charlie = Web.getDriver().findElement(charliePage).getText();
+        Assert.assertEquals(charlie, text, "not matching");
+    }
+    public void seeBlog2(String text){
+        String bob1 = Web.getDriver().findElement(bobBlog).getText();
+        Assert.assertEquals(bob1, text, "not matching");
+    }
+    public void seeBlog3(String text){
+        String bob2 = Web.getDriver().findElement(bobBlog2).getText();
+        Assert.assertEquals(bob2, text, "not matching");
+    }
+    public void seeBlog4(String text){
+        String alice = Web.getDriver().findElement(aliceBlog).getText();
+        Assert.assertEquals(alice, text, "not matching");
+    }
 
 
 

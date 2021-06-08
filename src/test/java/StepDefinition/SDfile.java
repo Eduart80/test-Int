@@ -3,6 +3,7 @@ package StepDefinition;
 import Pages.Kata.HomePage;
 import cucumber.api.java.After;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class SDfile {
@@ -53,4 +54,21 @@ public class SDfile {
     public void wall(){
         pp.wallPage();
     }
+    @When("^Charlie sees: (.+)$")
+    public void last(String text){
+        pp.seeBlog(text);
+    }
+    @When("^Bob (.+)$")
+    public void last2(String text){
+        pp.seeBlog2(text);
+    }
+    @When("^Bob (.+)$")
+    public void last3(String text){
+        pp.seeBlog3(text);
+    }
+    @When("^Alice (.+)$")
+    public void last4(String text){
+        pp.seeBlog4(text);
+    }
+
 }

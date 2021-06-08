@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         glue = {"StepDefinition","DriverWrapper"},
 
         //Specific tag to get executed
-        tags = {"@smoke"}, //@smoke @sanity @regression
+        tags = {"@smoke"}, //@smoke @sanity @regression @unit
 
         //readable console logs
         monochrome = true,
