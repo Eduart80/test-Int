@@ -21,7 +21,7 @@ public class Web {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @After
+    //@After
     public void quitDriver() {
         driver.quit();
     }

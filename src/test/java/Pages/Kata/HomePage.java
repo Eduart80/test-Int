@@ -8,8 +8,10 @@ import org.openqa.selenium.WebElement;
 
 public class HomePage extends BasePage {
 
-    By findAlice = By.xpath("//a{sample element text}") ;
-    By seeBob = By.xpath("//a{sample element text}") ;
+    By findAlice = By.id("textEntry") ;
+    By sendButt = By.id("buttSend");
+    By alBlog = By.id("AliceBlog");
+    By seeBob = By.xpath("//a[@href=\"bob.html\"]") ;
     By bobPublishing = By.xpath("//a[publishing timeline]");
     By gameRes =By.xpath("//a[game result]");
     By assertText = By.xpath("//a[plain text in web]");
@@ -21,13 +23,19 @@ public class HomePage extends BasePage {
     By aliceBlog = By.xpath("//a[alice blog]");
 
 
-    public void clickme() {
-        boolean ff = Web.getDriver().findElement(findAlice).isDisplayed();
-        Assert.assertEquals(ff, "is present");
+    public void clickme(String text) {
+        WebElement dd = Web.getDriver().findElement(findAlice);
+        dd.sendKeys(text);
+        waitAMin();
+        clickThis(sendButt);
     }
     public void views() {
         scrollPage();
-        Web.getDriver().navigate().refresh();
+    }
+    public void viewsAlice(String text) {
+        String textInWeb = Web.getDriver().findElement(alBlog).getText();
+        Assert.assertEquals(textInWeb, text);
+        System.out.println("Comment found " + textInWeb);
     }
     public void bobTimeLine() {
         clickThis(seeBob);

@@ -16,9 +16,24 @@
         </style>
         </head>
         <body>
+            
+            <div class="menu" >
+            <li>
+                <a href="index.html"><ul>Alice</ul></a>
+                <a href="bob.html"><ul>Bob</ul></a>
+                <a href="doni.html"><ul>Charlie</ul></a>
+                
+            </li>
+        </div>
         
         <div class="header">
-          <h2>Blog Name</h2>
+          <h2>Charlie Blog</h2>
+        </div>
+            
+            <div class="Enter coment">
+            <label>Enter comments</label>
+            <textarea id="textEntry"></textarea>
+            <button type="submit" onclick="enterText()" id="buttSend">Send</button>
         </div>
         
         <div class="row">
@@ -46,7 +61,8 @@
             </div>
             <div class="card">
               <h3>Popular Post</h3>
-              <div class="fakeimg">Image</div><br>
+              <p id="AliceBlog" style="text-align: center"></p>
+                <br>
               <div class="fakeimg">Image</div><br>
               <div class="fakeimg">Image</div>
             </div>
@@ -60,6 +76,6 @@
         <div class="footer">
           <h2>Footer</h2>
         </div>
-        
+        <script src="index.js"></script>
         </body>
         </html>

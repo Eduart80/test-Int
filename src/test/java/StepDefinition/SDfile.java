@@ -9,21 +9,23 @@ import cucumber.api.java.en.When;
 public class SDfile {
     HomePage pp = new HomePage();
 
-    @When("^Alice has published \"(.+)\"$")
-    public void clickDeals(){
-        pp.clickme();
+    @When("^Alice has published (.+)$")
+    public void clickDeals(String text){
+        pp.clickme(text);
     }
     @When("^Alice views her timeline$")
-    public void locat(){
+    public void local(){
        pp.views();
     }
-    @When("^Alice sees:\"(.+)\"$")
+    @When("^Alice sees: (.+)$")
     public void getList(String name){
-        pp.bobTimeLine();
-        pp.checkList(name);
+        pp.viewsAlice(name);
+
     }
     @When("^Bob has published  \"(.+)\"$")
     public void commentIN(String text){
+        pp.bobTimeLine();
+        pp.checkList(text);
         pp.commentF(text);
     }
     @When("^Bob has published \"(.+)\"$")
@@ -34,7 +36,7 @@ public class SDfile {
     public void look(){
         pp.moveUp();
     }
-    @When("^Alice sees:(.+), (.+)$")
+    @When("^Alice see: (.+), (.+)$")
     public void look(String text1, String text2){
         pp.lookUp(text1, text2);
     }
@@ -58,15 +60,15 @@ public class SDfile {
     public void CharlieLast(String text){
         pp.seeBlog(text);
     }
-    @When("^Bob (.+)$")
+    @When("^Charlie sees Bob (.+)$")
     public void BobLast2(String text){
         pp.seeBlog2(text);
     }
-    @When("^Bob - (.+)$")
+    @When("^Charlie see Bob - (.+)$")
     public void BobLast3(String text){
         pp.seeBlog3(text);
     }
-    @When("^Alice (.+)$")
+    @When("^Charlie sees Alice (.+)$")
     public void AliceLast4(String text){
         pp.seeBlog4(text);
     }
